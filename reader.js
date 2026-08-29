@@ -65,14 +65,14 @@ const mangaData = {
         img: "asset/Knightsoul Vacation/13.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page13.mp3",
-          volume: 0.8
+          volume: 0.7
         } 
       },
       { 
         img: "asset/Knightsoul Vacation/14.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page14.mp3",
-          volume: 1,
+          volume: 0.8,
           loop: true
         } 
       },
@@ -80,7 +80,7 @@ const mangaData = {
         img: "asset/Knightsoul Vacation/15.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page14.mp3",
-          volume: 1,
+          volume: 0.8,
           loop: true
         } 
       },
@@ -88,7 +88,7 @@ const mangaData = {
         img: "asset/Knightsoul Vacation/16.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page16.mp3",
-          volume: 1,
+          volume: ,0.8
           loop: true
         } 
       },
@@ -96,14 +96,14 @@ const mangaData = {
         img: "asset/Knightsoul Vacation/17.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page17.mp3",
-          volume: 1
+          volume: 0.8
         } 
       },
       { 
         img: "asset/Knightsoul Vacation/18.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page18.mp3",
-          volume: 1,
+          volume: 0.8,
           loop: true
         } 
       },
@@ -111,7 +111,7 @@ const mangaData = {
         img: "asset/Knightsoul Vacation/19.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page19.mp3",
-          volume: 1,
+          volume: 0.8,
           loop: true
         } 
       },
@@ -119,14 +119,14 @@ const mangaData = {
         img: "asset/Knightsoul Vacation/20.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page20.mp3",
-          volume: 1,
+          volume: 0.8,
         } 
       },
       { 
         img: "asset/Knightsoul Vacation/21.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page21.mp3",
-          volume: 1
+          volume: 0.8
         } 
       },
       { img: "asset/Knightsoul Vacation/22.webp", sfx: "" },
@@ -186,8 +186,8 @@ const mangaData = {
   },
   Radical_Vacation: {
     bgmTracks: [
-      { start: 2, end: 7, src: "asset/Radical Vacation/onsen.wav", volume: 0.7 },
-      { start: 8, end: 32, src: "asset/Radical Vacation/RomanceA.wav", volume: 0.7 }
+      { start: 2, end: 7, src: "asset/Radical Vacation/onsen.wav", volume: 0.4 },
+      { start: 8, end: 32, src: "asset/Radical Vacation/RomanceA.wav", volume: 0.9 }
     ],
     scenes: [
       { img: "asset/Radical Vacation/1.webp", sfx: "" },
