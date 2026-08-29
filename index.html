@@ -6,6 +6,29 @@
   <title>Klang Siao Manga</title>
   <link rel="icon" type="image/png" href="icon/LOGO.png">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* CSS เพิ่มเติมสำหรับป้าย Coming Soon */
+    .manga-card.disabled {
+      pointer-events: none; /* ห้ามคลิก */
+      opacity: 0.8; /* ปรับให้มืดลงเล็กน้อย */
+    }
+    .badge-coming-soon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #007bff;
+      color: #fff;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      z-index: 2;
+    }
+    .card-image {
+      position: relative; /* สำหรับจัดตำแหน่งป้ายในรูปภาพ */
+    }
+  </style>
 </head>
 <body>
 
@@ -26,7 +49,7 @@
       <button class="tag-btn" onclick="filterByTag('Anime', this)">Anime</button>
       <button class="tag-btn" onclick="filterByTag('Effect', this)">Effect</button>
       <button class="tag-btn" onclick="filterByTag('Game', this)">Game</button>
-      <button class="tag-btn" onclick="filterByTag('Furry', this)">Furry</button>
+      <button class="tag-btn" onclick="filterByTag('Movie', this)">Movie</button>
     </div>
   </section>
 
@@ -64,21 +87,7 @@
     </a>
 
     <!-- การ์ดมังงะเรื่องที่ 3 -->
-    <a href="reader.html?story=Gary&Pit" class="manga-card" data-tags="">
-      <div class="card-image">
-        <img src="asset/Gary & Pit/1.webp" alt="Gary&Pit Manga">
-      </div>
-      <div class="card-info">
-        <h3>Gary & Pit</h3>
-        <div class="card-topics">
-          <span class="topic-badge">โรแมนติก</span>
-          <span class="topic-badge">อบอุ่นหัวใจ</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- การ์ดมังงะเรื่องที่ 4 -->
-    <a href="reader.html?story=Radical_Vacation" class="manga-card" data-tags="FullColor Anime Music">
+    <a href="reader.html?story=Radical_Vacation" class="manga-card" data-tags="FullColor Anime Effect Music">
       <div class="card-image">
         <img src="asset/Radical Vacation/1.webp" alt="Radical_Vacation Manga">
       </div>
@@ -93,44 +102,60 @@
       </div>
     </a>
 
-    <!-- การ์ดมังงะเรื่องที่ 5 -->
-    <a href="reader.html?story=Already_Pretty_the_Way_You_Are" class="manga-card" data-tags="โรแมนติก อบอุ่นหัวใจ">
+     <a href="reader.html?story=Gary&Pit" class="manga-card disabled" data-tags="FullColor">
+      <div class="card-image">
+       <img src="asset/Gary & Pit/1.webp" alt="Gary&Pit Manga">
+         <span class="badge-coming-soon">Coming Soon</span>
+      </div>
+      <div class="card-info">
+        <h3>Gary & Pit</h3>
+        <div class="card-topics">
+          <span class="topic-badge">FullColor</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- การ์ดมังงะเรื่องที่ 5 (Coming Soon) -->
+    <a href="#" class="manga-card disabled" data-tags="FullColor Movie">
       <div class="card-image">
         <img src="asset/Already Pretty the Way You Are/1.webp" alt="Already_Pretty_the_Way_You_Are Manga">
+        <span class="badge-coming-soon">Coming Soon</span>
       </div>
       <div class="card-info">
         <h3>Already Pretty the Way You Are</h3>
         <div class="card-topics">
-          <span class="topic-badge">โรแมนติก</span>
-          <span class="topic-badge">อบอุ่นหัวใจ</span>
+          <span class="topic-badge">FullColor</span>
+          <span class="topic-badge">Movie</span>
         </div>
       </div>
     </a>
 
-    <!-- การ์ดมังงะเรื่องที่ 6 -->
-    <a href="reader.html?story=Super_Sons&The_Unwanted_Friend" class="manga-card" data-tags="แฟนตาซี สืบสวน">
+    <!-- การ์ดมังงะเรื่องที่ 6 (Coming Soon) -->
+    <a href="#" class="manga-card disabled" data-tags="FullColor Movie">
       <div class="card-image">
         <img src="asset/Super Sons & The Unwanted Friend/1.webp" alt="Super_Sons&The_Unwanted_Friend Manga">
+        <span class="badge-coming-soon">Coming Soon</span>
       </div>
       <div class="card-info">
         <h3>SuperSons & The Unwanted Friend</h3>
         <div class="card-topics">
-          <span class="topic-badge">แฟนตาซี</span>
-          <span class="topic-badge">สืบสวน</span>
+          <span class="topic-badge">FullColor</span>
+          <span class="topic-badge">Movie</span>
         </div>
       </div>
     </a>
 
-    <!-- การ์ดมังงะเรื่องที่ 7 -->
-    <a href="reader.html?story=Super_Sons_The_New_Journey_Begins" class="manga-card" data-tags="แฟนตาซี พักร้อน">
+    <!-- การ์ดมังงะเรื่องที่ 7 (Coming Soon) -->
+    <a href="#" class="manga-card disabled" data-tags="FullColor Movie">
       <div class="card-image">
         <img src="asset/Super Sons, The New Journey Begins/1.webp" alt="Super_Sons_The_New_Journey_Begins Manga">
+        <span class="badge-coming-soon">Coming Soon</span>
       </div>
       <div class="card-info">
         <h3>Super Sons, The New Journey Begins</h3>
         <div class="card-topics">
-          <span class="topic-badge">แฟนตาซี</span>
-          <span class="topic-badge">พักร้อน</span>
+          <span class="topic-badge">FullColor</span>
+          <span class="topic-badge">Movie</span>
         </div>
       </div>
     </a>
