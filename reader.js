@@ -88,7 +88,7 @@ const mangaData = {
         img: "asset/Knightsoul Vacation/16.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page16.mp3",
-          volume: ,0.8
+          volume: 0.8,
           loop: true
         } 
       },
