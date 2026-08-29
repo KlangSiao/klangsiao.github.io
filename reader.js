@@ -13,14 +13,14 @@ const mangaData = {
         img: "asset/Knightsoul Vacation/4.webp", 
         sfx: { 
           src: "asset/Knightsoul Vacation/Wave.mp3", 
-          volume: 1
+          volume: 0.8
         } 
       },
       { 
         img: "asset/Knightsoul Vacation/5.webp", 
         sfx: { 
           src: "asset/Knightsoul Vacation/SoundP5.mp3", 
-          volume: 1 
+          volume: 0.8
         } 
       },
       { img: "asset/Knightsoul Vacation/6.webp", sfx: "" },
@@ -43,7 +43,7 @@ const mangaData = {
         img: "asset/Knightsoul Vacation/10.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page10.mp3",
-          volume: 1,
+          volume: 0.8,
           loop: true
         }
       },
@@ -51,21 +51,21 @@ const mangaData = {
         img: "asset/Knightsoul Vacation/11.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page11.mp3",
-          volume: 1
+          volume: 0.8
         } 
       },
       { 
         img: "asset/Knightsoul Vacation/12.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page12.mp3",
-          volume: 1
+          volume: 0.9
         } 
       },
       { 
         img: "asset/Knightsoul Vacation/13.webp", 
         sfx: {
           src: "asset/Knightsoul Vacation/Page13.mp3",
-          volume: 1
+          volume: 0.8
         } 
       },
       { 
@@ -120,7 +120,6 @@ const mangaData = {
         sfx: {
           src: "asset/Knightsoul Vacation/Page20.mp3",
           volume: 1,
-          loop: true
         } 
       },
       { 
@@ -187,8 +186,8 @@ const mangaData = {
   },
   Radical_Vacation: {
     bgmTracks: [
-      { start: 2, end: 7, src: "asset/Radical Vacation/onsen.mp3", volume: 0.5 },
-      { start: 8, end: 32, src: "asset/Radical Vacation/RomanceA.wav", volume: 0.5 }
+      { start: 2, end: 7, src: "asset/Radical Vacation/onsen.mp3", volume: 1 },
+      { start: 8, end: 32, src: "asset/Radical Vacation/RomanceA.wav", volume: 0.7 }
     ],
     scenes: [
       { img: "asset/Radical Vacation/1.webp", sfx: "" },
@@ -201,21 +200,21 @@ const mangaData = {
         img: "asset/Radical Vacation/7.webp", 
         sfx: { 
           src: "asset/Radical Vacation/get out of water.wav", 
-          volume: 1
+          volume: 0.7
         } 
       },
       { 
         img: "asset/Radical Vacation/8.webp", 
         sfx: { 
           src: "asset/Radical Vacation/towel.wav", 
-          volume: 1
+          volume: 0.7
         } 
       },
       { 
         img: "asset/Radical Vacation/9.webp", 
         sfx: { 
           src: "asset/Radical Vacation/open door.wav", 
-          volume: 1
+          volume: 0.7
         } 
       },
       { img: "asset/Radical Vacation/10.webp", sfx: "" },
