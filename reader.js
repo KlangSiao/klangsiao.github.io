@@ -135,7 +135,7 @@ const mangaData = {
   },
   Arcade_Affair: {
     bgmTracks: [
-      { start: 1, end: 44, src: "asset/Arcade Affair/Moonlight_Latte.wav", volume: 0.5 }
+      { start: 1, end: 44, src: "asset/Arcade Affair/Moonlight Cafe .mp3", volume: 0.5 }
     ],
     scenes: [
       { img: "asset/Arcade Affair/1.webp", sfx: "" },
@@ -186,7 +186,7 @@ const mangaData = {
   },
   Radical_Vacation: {
     bgmTracks: [
-      { start: 2, end: 7, src: "asset/Radical Vacation/onsen.mp3", volume: 1 },
+      { start: 2, end: 7, src: "asset/Radical Vacation/onsen.wav", volume: 0.7 },
       { start: 8, end: 32, src: "asset/Radical Vacation/RomanceA.wav", volume: 0.7 }
     ],
     scenes: [
