@@ -187,7 +187,7 @@ const mangaData = {
   Radical_Vacation: {
     bgmTracks: [
       { start: 2, end: 7, src: "asset/Radical Vacation/onsen.wav", volume: 0.4 },
-      { start: 8, end: 32, src: "asset/Radical Vacation/RomanceA.wav", volume: 0.9 }
+      { start: 8, end: 32, src: "asset/Radical Vacation/RomanceA.wav", volume: 1 }
     ],
     scenes: [
       { img: "asset/Radical Vacation/1.webp", sfx: "" },
