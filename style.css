@@ -24,7 +24,7 @@ header h1 {
 }
 
 .highlight {
-  color: #38ada9; /* เปลี่ยนเป็นสีเขียวมิ้นท์/ฟ้าสดใส ให้ฟีลลิ่งสว่างและเฟรช */
+  color: #38ada9; /* สีเขียวมิ้นท์/ฟ้าสดใส */
 }
 
 header p {
@@ -59,6 +59,36 @@ header p {
   transform: translateY(-8px);
   box-shadow: 0 15px 30px rgba(56, 173, 169, 0.15); /* เงาสีฟ้ามิ้นท์เวลาชี้ */
 }
+
+/* ==========================================
+   ✨ สไตล์เพิ่มเติมสำหรับเรื่องใหม่ (New Release)
+   ========================================== */
+.manga-card.is-new {
+  order: -1; /* ดันการ์ดขึ้นไปอยู่บนสุด */
+  border: 2px solid #ff3b30; /* กรอบสีแดงสด */
+  box-shadow: 0 4px 15px rgba(255, 59, 48, 0.25); /* เงาสีแดงจางๆ */
+}
+
+.manga-card.is-new:hover {
+  box-shadow: 0 15px 30px rgba(255, 59, 48, 0.35); /* เงาสีแดงตอน Hover */
+}
+
+/* ป้ายคำว่า NEW */
+.badge-new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff3b30;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+/* ========================================== */
 
 .card-image {
   position: relative;
@@ -114,6 +144,7 @@ header p {
   font-size: 0.9rem;
   line-height: 1.5;
 }
+
 /* ==========================================
    สไตล์เพิ่มเติมสำหรับหน้าอ่านมังงะ (Reader Page)
    ========================================== */
@@ -186,6 +217,7 @@ header p {
   height: auto;
   display: block;
 }
+
 /* ==========================================
    สไตล์หน้าจอ Loading โทนสว่าง (Loading Screen)
    ========================================== */
@@ -232,6 +264,7 @@ header p {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
 /* จัดการหน้าอ่านแบบ Flip Page */
 .manga-container {
   display: flex;
@@ -287,20 +320,21 @@ header p {
 }
 
 #page-indicator {
-  font-size: 14px;         /* 1. ลดขนาดตัวอักษรลง (ถ้าเดิมเป็น 16px หรือใหญ่กว่า) */
-  white-space: nowrap;     /* 2. 🔥 สั่งห้ามขึ้นบรรทัดใหม่เด็ดขาด */
-  letter-spacing: 0.5px;   /* ปรับระยะห่างตัวอักษรให้กระชับขึ้น */
+  font-size: 14px;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
 }
+
 #current-manga-img {
-  -webkit-touch-callout: none; /* ปิดเมนูป๊อปอัพตอนกดค้างในมือถือ */
-  -webkit-user-select: none;   /* ปิดการเลือกรูปภาพ */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  
-  -webkit-user-drag: none;     /* 🔥 ใช้แค่ตัวนี้ตัวเดียวพอครับ */
+  -webkit-user-drag: none;
 }
+
 /* ส่วนระบบค้นหาและ Filter Topics */
 .filter-section {
   max-width: 1200px;
@@ -375,4 +409,39 @@ header p {
   padding: 2px 8px;
   border-radius: 10px;
   border: 1px solid rgba(255, 71, 87, 0.3);
+}
+
+/* ซ่อน Element ที่ไม่ได้ใช้ */
+.hidden {
+  display: none !important;
+}
+
+/* ตกแต่ง Dropdown เลือกตอน */
+.control-select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* คอนเทนเนอร์สำหรับโหมดเลื่อนอ่านยาว (Webtoon) */
+.manga-scroll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.manga-scroll-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: -1px;
 }
