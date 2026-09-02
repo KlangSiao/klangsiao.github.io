@@ -105,8 +105,8 @@ const mangaData = {
           { img: "asset/A Secret Romance/ch2/7.png", sfx: "" }
         ]
       },
-      "ch3": {
-        title: "ตอนที่ 3",
+      "ch2": {
+        title: "ตอนที่ 2",
         bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch2/bgm.mp3", volume: 0.5 }],
         scenes: [
           { video: "icon/coming soon.webm", sfx: "" },
