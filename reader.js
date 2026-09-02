@@ -96,7 +96,20 @@ const mangaData = {
         title: "ตอนที่ 2",
         bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch2/bgm.mp3", volume: 0.5 }],
         scenes: [
-          { video: "icon/coming soon.webm", sfx: "" }
+          { img: "asset/A Secret Romance/ch2/1.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch2/2.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch2/3.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch2/4.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch2/5.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch2/6.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch2/7.png", sfx: "" }
+        ]
+      },
+      "ch3": {
+        title: "ตอนที่ 3",
+        bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch2/bgm.mp3", volume: 0.5 }],
+        scenes: [
+          { video: "icon/coming soon.webm", sfx: "" },
         ]
       }
     }
