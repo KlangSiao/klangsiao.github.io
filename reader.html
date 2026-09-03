@@ -10,19 +10,19 @@
 <body class="reader-body">
 
   <div id="loading-screen" class="loading-overlay">
-    <div class="spinner"></div>
-    <p>กำลังเตรียมมังงะ...</p>
+    <div class="loading-content">
+      <div id="loading-text">กำลังโหลดเนื้อหา... (0%)</div>
+      
+      <img id="loading-icon" src="icon/loading.gif" alt="Loading..." />
+    </div>
   </div>
 
   <div class="audio-controls">
-    <!-- Dropdown เลือกตอน (แสดงเฉพาะเรื่องที่มีหลายตอน) -->
     <select id="chapter-select" class="control-select" onchange="changeChapter(this.value)"></select>
-    
     <button id="mute-btn" class="control-btn">🔊 เปิดเสียงอยู่</button>
     <a href="index.html" class="control-btn back-btn">⬅️ หน้าแรก</a>
   </div>
 
-  <!-- 📖 โหมด 1: แบบเปิดทีละหน้า (Flip Mode) -->
   <main class="manga-container" id="flip-mode-container">
     <div class="manga-page-wrapper" id="page-click-area">
       <img id="current-manga-img" src="" alt="Manga Page">
@@ -35,7 +35,6 @@
     </div>
   </main>
 
-  <!-- 📜 โหมด 2: แบบเลื่อนอ่านยาว (Scroll Mode) -->
   <main class="manga-scroll-container hidden" id="scroll-mode-container"></main>
 
   <script src="reader.js"></script>

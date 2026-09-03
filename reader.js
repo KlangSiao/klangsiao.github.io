@@ -109,6 +109,34 @@ const mangaData = {
         title: "ตอนที่ 2",
         bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch2/bgm.mp3", volume: 0.5 }],
         scenes: [
+          { img: "asset/A Secret Romance/ch3/1.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/2.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/3.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/4.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/5.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/6.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/7.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/8.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/9.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/10.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/11.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/12.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/13.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/14.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/15.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/16.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/17.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/18.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/19.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/20.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/21.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch3/22.png", sfx: "" },
+        ]
+      },
+      "ch3": {
+        title: "ตอนที่ 3",
+        bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch2/bgm.mp3", volume: 0.5 }],
+        scenes: [
           { video: "icon/coming soon.webm", sfx: "" },
         ]
       }
@@ -136,7 +164,8 @@ const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const pageIndicator = document.getElementById('page-indicator');
 const muteBtn = document.getElementById('mute-btn');
-const loadingScreen = document.getElementById('loading-screen');
+const loadingScreen = document.getElementById('loading-screen') || document.getElementById('loading-overlay');
+const loadingText = document.getElementById('loading-text');
 const pageClickArea = document.getElementById('page-click-area');
 const flipContainer = document.getElementById('flip-mode-container');
 const scrollContainer = document.getElementById('scroll-mode-container');
@@ -146,10 +175,8 @@ const chapterSelect = document.getElementById('chapter-select');
 function initReader() {
   if (!rawStory) return;
 
-  // 1. ตรวจสอบโหมดการอ่าน ('scroll' หรือ 'flip')
   isScrollMode = rawStory.readMode === 'scroll';
 
-  // 2. ตรวจสอบการจัดการตอน (Chapters)
   if (rawStory.hasChapters) {
     if (chapterSelect) chapterSelect.style.display = 'inline-block';
     const keys = Object.keys(rawStory.chapters);
@@ -169,7 +196,6 @@ function initReader() {
     currentStory = rawStory;
   }
 
-  // 3. แสดงผล UI ตามโหมดที่ตั้งไว้
   if (isScrollMode) {
     if (flipContainer) flipContainer.classList.add('hidden');
     if (scrollContainer) scrollContainer.classList.remove('hidden');
@@ -179,18 +205,19 @@ function initReader() {
     if (flipContainer) flipContainer.classList.remove('hidden');
     renderPage(currentPageIndex);
   }
+
+  // เริ่มเช็กความพร้อมสื่อทั้งหมด
+  startLoadingProcess();
 }
 
-// เปลี่ยนตอน
 function changeChapter(chKey) {
   window.location.href = `reader.html?story=${storyParam}&chapter=${chKey}`;
 }
 
-// ฟังก์ชันสร้าง Media Element (สร้าง <img> หรือ <video> ตามชื่อไฟล์)
 function createMediaElement(src, altText = '') {
   if (!src) return null;
 
-  if (src.endsWith('.webm')) {
+  if (src.endsWith('.webm') || src.endsWith('.mp4')) {
     const video = document.createElement('video');
     video.src = src;
     video.autoplay = true;
@@ -209,7 +236,6 @@ function createMediaElement(src, altText = '') {
   }
 }
 
-// เรนเดอร์โหมดเลื่อนอ่าน (Scroll Mode)
 function renderScrollMode() {
   if (!scrollContainer) return;
   scrollContainer.innerHTML = '';
@@ -218,7 +244,6 @@ function renderScrollMode() {
     const mediaSrc = scene.img || scene.video;
     const element = createMediaElement(mediaSrc, `หน้า ${index + 1}`);
     if (element) {
-      if (element.tagName === 'IMG') element.loading = "lazy";
       scrollContainer.appendChild(element);
     }
   });
@@ -228,7 +253,6 @@ function renderScrollMode() {
   }
 }
 
-// เรนเดอร์โหมดทีละหน้า (Flip Mode)
 function renderPage(index) {
   if (!currentStory || !currentStory.scenes[index]) return;
 
@@ -241,7 +265,6 @@ function renderPage(index) {
   const scene = currentStory.scenes[index];
   const mediaSrc = scene.img || scene.video;
 
-  // ค้นหากล่องแสดงรูปใน flipMode
   const wrapper = pageClickArea || flipContainer;
   if (wrapper) {
     wrapper.innerHTML = '';
@@ -332,6 +355,57 @@ function playSFX(sfxData) {
   currentSFXAudio.play().catch(err => console.log("SFX Blocked:", err));
 }
 
+// ==========================================
+// ⏳ ระบบตรวจจับการโหลดมีเดีย 100%
+// ==========================================
+function startLoadingProcess() {
+  const mediaElements = Array.from(document.querySelectorAll('.manga-media-element'));
+
+  if (mediaElements.length === 0) {
+    hideLoadingScreen();
+    return;
+  }
+
+  let loadedCount = 0;
+  const totalCount = mediaElements.length;
+
+  const checkProgress = () => {
+    loadedCount++;
+    if (loadingText) {
+      const percent = Math.round((loadedCount / totalCount) * 100);
+      loadingText.textContent = `กำลังโหลดเนื้อหา... (${percent}%)`;
+    }
+
+    if (loadedCount >= totalCount) {
+      hideLoadingScreen();
+    }
+  };
+
+  mediaElements.forEach((el) => {
+    if (el.tagName === 'IMG') {
+      if (el.complete) {
+        checkProgress();
+      } else {
+        el.addEventListener('load', checkProgress, { once: true });
+        el.addEventListener('error', checkProgress, { once: true });
+      }
+    } else if (el.tagName === 'VIDEO') {
+      if (el.readyState >= 3) {
+        checkProgress();
+      } else {
+        el.addEventListener('canplaythrough', checkProgress, { once: true });
+        el.addEventListener('error', checkProgress, { once: true });
+      }
+    }
+  });
+}
+
+function hideLoadingScreen() {
+  if (loadingScreen) {
+    loadingScreen.classList.add('fade-out');
+  }
+}
+
 // Event Listeners
 if (prevBtn) {
   prevBtn.addEventListener('click', () => {
@@ -389,9 +463,6 @@ if (muteBtn) {
   });
 }
 
-window.addEventListener('load', () => {
-  if (loadingScreen) {
-    loadingScreen.classList.add('fade-out');
-  }
+window.addEventListener('DOMContentLoaded', () => {
   initReader();
 });
