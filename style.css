@@ -322,7 +322,7 @@ header p {
   align-items: center;
 }
 
-/* คลาสสื่อมังงะแบบรวม (ทั้ง Image และ Video) */
+/* คลาสสื่อมังงะแบบรวม (ทั้ง Image และ Video) + ล็อกการเซฟรูป */
 .manga-media-element {
   max-width: 100%;
   max-height: 80vh;
@@ -332,10 +332,16 @@ header p {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   display: block;
+
+  /* 🛡️ ป้องกันการลากรูป / กดค้างบันทึกรูป */
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   -webkit-user-drag: none;
+  pointer-events: auto;
 }
 
 /* คอนเทนเนอร์สำหรับโหมดเลื่อนอ่านยาว (Scroll / Webtoon Mode) */
@@ -348,6 +354,8 @@ header p {
   margin: 0 auto;
   padding-top: 70px; /* เว้นพื้นที่ลอยด้านบน */
   padding-bottom: 40px;
+  position: relative;
+  user-select: none;
 }
 
 .manga-scroll-container .manga-media-element {
@@ -440,6 +448,8 @@ header p {
 .loading-icon {
   width: 300px;
   height: 300px;
+  max-width: 80vw; /* 🛡️ ป้องกันรูปใหญ่ล้นจอบนหน้าจอขนาดเล็ก */
+  max-height: 50vh;
   object-fit: contain;
   display: block;
 }
@@ -473,7 +483,7 @@ header p {
 
   #loading-icon,
   .loading-icon {
-    width: 90px;
-    height: 90px;
+    width: 150px; /* 👈 ปรับขนาดบนมือถือให้กำลังดี ไม่เล็กเกินไปเหมือน 90px */
+    height: 150px;
   }
 }

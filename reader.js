@@ -137,6 +137,32 @@ const mangaData = {
         title: "ตอนที่ 3",
         bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch2/bgm.mp3", volume: 0.5 }],
         scenes: [
+          { img: "asset/A Secret Romance/ch4/1.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/2.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/3.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/4.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/5.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/6.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/7.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/8.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/9.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/10.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/11.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/12.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/13.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/14.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/15.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/16.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/17.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/18.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/19.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch4/20.png", sfx: "" },
+        ]
+      },
+      "ch4": {
+        title: "ตอนที่ 4",
+        bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch2/bgm.mp3", volume: 0.5 }],
+        scenes: [
           { video: "icon/coming soon.webm", sfx: "" },
         ]
       }
@@ -217,23 +243,31 @@ function changeChapter(chKey) {
 function createMediaElement(src, altText = '') {
   if (!src) return null;
 
+  let element;
+
   if (src.endsWith('.webm') || src.endsWith('.mp4')) {
-    const video = document.createElement('video');
-    video.src = src;
-    video.autoplay = true;
-    video.loop = true;
-    video.muted = true;
-    video.playsInline = true;
-    video.className = 'manga-media-element';
-    return video;
+    element = document.createElement('video');
+    element.src = src;
+    element.autoplay = true;
+    element.loop = true;
+    element.muted = true;
+    element.playsInline = true;
   } else {
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = altText;
-    img.id = 'current-manga-img';
-    img.className = 'manga-media-element';
-    return img;
+    element = document.createElement('img');
+    element.src = src;
+    element.alt = altText;
+    element.id = 'current-manga-img';
   }
+
+  element.className = 'manga-media-element';
+
+  // 🛡️ ป้องกันการคลิกขวาเพื่อกด Save / Open Image in new tab
+  element.addEventListener('contextmenu', (e) => e.preventDefault());
+
+  // 🛡️ ป้องกันการลากรูปภาพ (Drag & Drop) ไปวางที่อื่นเพื่อบันทึก
+  element.addEventListener('dragstart', (e) => e.preventDefault());
+
+  return element;
 }
 
 function renderScrollMode() {
@@ -466,3 +500,9 @@ if (muteBtn) {
 window.addEventListener('DOMContentLoaded', () => {
   initReader();
 });
+// ป้องกันการคลิกขวาบนคอนเทนเนอร์โหมดเลื่อนทั้งหมด
+if (scrollContainer) {
+  scrollContainer.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+  });
+}
