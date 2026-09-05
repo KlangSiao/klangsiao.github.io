@@ -66,7 +66,7 @@ const mangaData = {
     chapters: {
       "ch1": {
         title: "ตอนที่ 1",
-        bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch1/bgm.mp3", volume: 0.5 }],
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.6 }],
         scenes: [
           { img: "asset/A Secret Romance/ch1/1.jpg", sfx: "" },
           { img: "asset/A Secret Romance/ch1/2.jpg", sfx: "" },
@@ -94,7 +94,7 @@ const mangaData = {
       },
       "ch1.5": {
         title: "ตอนที่ 1.5",
-        bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch2/bgm.mp3", volume: 0.5 }],
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.6 }],
         scenes: [
           { img: "asset/A Secret Romance/ch2/1.png", sfx: "" },
           { img: "asset/A Secret Romance/ch2/2.png", sfx: "" },
@@ -107,7 +107,7 @@ const mangaData = {
       },
       "ch2": {
         title: "ตอนที่ 2",
-        bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch2/bgm.mp3", volume: 0.5 }],
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.6 }],
         scenes: [
           { img: "asset/A Secret Romance/ch3/1.png", sfx: "" },
           { img: "asset/A Secret Romance/ch3/2.png", sfx: "" },
@@ -135,7 +135,7 @@ const mangaData = {
       },
       "ch3": {
         title: "ตอนที่ 3",
-        bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch2/bgm.mp3", volume: 0.5 }],
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.6 }],
         scenes: [
           { img: "asset/A Secret Romance/ch4/1.png", sfx: "" },
           { img: "asset/A Secret Romance/ch4/2.png", sfx: "" },
@@ -161,9 +161,59 @@ const mangaData = {
       },
       "ch4": {
         title: "ตอนที่ 4",
-        bgmTracks: [{ start: 1, end: 10, src: "asset/A Secret Romance/ch2/bgm.mp3", volume: 0.5 }],
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.6 }],
         scenes: [
-          { video: "icon/coming soon.webm", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/1.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/2.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/3.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/4.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/5.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/6.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/7.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/8.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/9.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/10.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/11.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/12.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/13.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/14.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/15.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/16.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/17.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/18.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/19.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/20.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch5/21.png", sfx: "" },
+        ]
+      },
+      "ch5": {
+        title: "ตอนที่ 5",
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.6 }],
+        scenes: [
+          { img: "asset/A Secret Romance/ch6/1.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/2.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/3.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/4.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/5.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/6.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/7.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/8.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/9.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/10.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/11.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/12.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/13.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/14.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/15.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/16.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/17.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/18.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/19.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/20.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/21.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/22.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/23.png", sfx: "" },
+          { img: "asset/A Secret Romance/ch6/24.png", sfx: "" },
         ]
       }
     }
