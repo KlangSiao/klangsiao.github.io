@@ -66,7 +66,7 @@ const mangaData = {
     chapters: {
       "ch1": {
         title: "ตอนที่ 1",
-        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.8 }],
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.9 }],
         scenes: [
           { img: "asset/A Secret Romance/ch1/1.jpg", sfx: "" },
           { img: "asset/A Secret Romance/ch1/2.jpg", sfx: "" },
@@ -94,7 +94,7 @@ const mangaData = {
       },
       "ch1.5": {
         title: "ตอนที่ 1.5",
-        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.8 }],
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.9 }],
         scenes: [
           { img: "asset/A Secret Romance/ch2/1.png", sfx: "" },
           { img: "asset/A Secret Romance/ch2/2.png", sfx: "" },
@@ -107,7 +107,7 @@ const mangaData = {
       },
       "ch2": {
         title: "ตอนที่ 2",
-        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.8 }],
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.9 }],
         scenes: [
           { img: "asset/A Secret Romance/ch3/1.png", sfx: "" },
           { img: "asset/A Secret Romance/ch3/2.png", sfx: "" },
@@ -135,7 +135,7 @@ const mangaData = {
       },
       "ch3": {
         title: "ตอนที่ 3",
-        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.8 }],
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.9 }],
         scenes: [
           { img: "asset/A Secret Romance/ch4/1.png", sfx: "" },
           { img: "asset/A Secret Romance/ch4/2.png", sfx: "" },
@@ -161,7 +161,7 @@ const mangaData = {
       },
       "ch4": {
         title: "ตอนที่ 4",
-        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.8 }],
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.9 }],
         scenes: [
           { img: "asset/A Secret Romance/ch5/1.png", sfx: "" },
           { img: "asset/A Secret Romance/ch5/2.png", sfx: "" },
@@ -188,7 +188,7 @@ const mangaData = {
       },
       "ch5": {
         title: "ตอนที่ 5",
-        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.8 }],
+        bgmTracks: [{ start: 1, end: 24, src: "asset/A Secret Romance/A Romace.wav", volume: 0.9 }],
         scenes: [
           { img: "asset/A Secret Romance/ch6/1.png", sfx: "" },
           { img: "asset/A Secret Romance/ch6/2.png", sfx: "" },
